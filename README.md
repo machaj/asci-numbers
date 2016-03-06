@@ -1,2 +1,2 @@
-# asci-numbers
-Convert numbers to ASCI art text
+# ascii-numbers
+Convert numbers to ASCII art text
