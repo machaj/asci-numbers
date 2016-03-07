@@ -1,4 +1,4 @@
-const requiredLetters = [ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ' ' ];
+const requiredLetters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ' '];
 
 function checkFontHeight(letter, letterMaxHeight) {
 	const letterHeight = letter.length;
@@ -16,7 +16,7 @@ function checkFontWidth(letter, letterMaxWidth) {
 
 function fontAnalyse(font) {
 	const requiredLettersCount = requiredLetters.length;
-	let fontStatistic = {
+	const fontStatistic = {
 		height: 0,
 		width: 0
 	};
@@ -29,7 +29,7 @@ function fontAnalyse(font) {
 			fontStatistic.height = checkFontHeight(font[letter], fontStatistic.height);
 			fontStatistic.width = checkFontWidth(font[letter], fontStatistic.width);
 		} else {
-			throw `Font does not contain letter ${letter}.`;
+			throw new Error(`Font does not contain letter ${letter}.`);
 		}
 		i++;
 	}

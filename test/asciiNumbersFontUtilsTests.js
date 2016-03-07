@@ -7,7 +7,7 @@ import fontAnalyse from '../src/asciiNumbersFontUtils';
 describe('ASCINumbersFontUtils', () => {
 	describe('Passing valid font', () => {
 		const fontStatistic = fontAnalyse(defaultFont);
-		it('should return object with font height and width', function () {
+		it('should return object with font height and width', () => {
 			expect(fontStatistic.height).toBe(6);
 			expect(fontStatistic.width).toBe(9);
 		});
@@ -15,7 +15,7 @@ describe('ASCINumbersFontUtils', () => {
 
 	describe('Passing simple font', () => {
 		const fontStatistic = fontAnalyse(simpleFont);
-		it('should return height 1 and width 1', function () {
+		it('should return height 1 and width 1', () => {
 			expect(fontStatistic.height).toBe(1);
 			expect(fontStatistic.width).toBe(1);
 		});
@@ -27,14 +27,12 @@ describe('ASCINumbersFontUtils', () => {
 
 		try {
 			fontAnalyse(invalidFont);
-		} catch(exception) {
+		} catch (exception) {
 			error = exception;
 		}
 
-		it('should throw error', function () {
+		it('should throw error', () => {
 			expect(error).toBe('Font does not contain letter 2.');
 		});
-
-	})
+	});
 });
-

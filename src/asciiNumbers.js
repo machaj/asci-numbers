@@ -1,18 +1,18 @@
 import fontAnalyse from './asciiNumbersFontUtils';
 
-let defaultConfig = {
+const defaultConfig = {
 	lineLength: 80,
 	minDigits: null,
 	space: ''
 };
 
 function printNumber(font, numberAsString, numberOfDigits) {
-	let asciiNumber = [];
+	const asciiNumber = [];
 
 	for (let letterRow = 0; letterRow < font.statistic.height; letterRow++) {
-		let asciiTextRow = [];
+		const asciiTextRow = [];
 		for (let digit = 0; digit < numberOfDigits; digit++) {
-			asciiTextRow.push(font.letters[numberAsString[digit]][letterRow])
+			asciiTextRow.push(font.letters[numberAsString[digit]][letterRow]);
 		}
 		asciiNumber.push(asciiTextRow.join(font.space));
 	}
@@ -26,17 +26,16 @@ function printNumberLine(font, number) {
 		let numberOfDigits = numberAsString.length;
 
 		if (numberOfDigits < font.maxLettersPerLine) {
-			if (font.minDigits && numberOfDigits < font.minDigits ) {
+			if (font.minDigits && numberOfDigits < font.minDigits) {
 				numberAsString = `${' '.repeat(font.minDigits - numberOfDigits)}${numberAsString}`;
 				numberOfDigits = numberAsString.length;
 			}
 			return printNumber(font, numberAsString, numberOfDigits);
-		} else {
-			// TODO: Resolve numbers with more digits than is space at available line
-			throw 'Number has more digits than is able to fit to the command line length';
 		}
+		// TODO: Resolve numbers with more digits than is space at available line
+		throw new Error('Number has more digits than is able to fit to the command line length');
 	} else {
-		throw 'Passed argument is not a number';
+		throw new Error('Passed argument is not a number');
 	}
 }
 
@@ -44,11 +43,13 @@ class ASCINumbers {
 	constructor(font, userConfig) {
 		const config = Object.assign(defaultConfig, userConfig);
 		const fontStatistic = fontAnalyse(font);
-		const maxLettersPerLine = Math.round(config.lineLength / (fontStatistic.width + config.space.length));
+		const maxLettersPerLine = Math.round(
+			config.lineLength / (fontStatistic.width + config.space.length)
+		);
 
 		this.font = {
 			letters: font,
-			maxLettersPerLine: maxLettersPerLine,
+			maxLettersPerLine,
 			minDigits: config.minDigits,
 			statistic: fontStatistic,
 			space: config.space
