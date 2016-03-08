@@ -23,16 +23,16 @@ describe('ASCINumbersFontUtils', () => {
 
 	describe('Passing invalid font', () => {
 		const invalidFont = { 0: ['0'], 1: ['1'] };
-		let error;
+		let errorMessage;
 
 		try {
 			fontAnalyse(invalidFont);
 		} catch (exception) {
-			error = exception;
+			errorMessage = exception.message;
 		}
 
 		it('should throw error', () => {
-			expect(error).toBe('Font does not contain letter 2.');
+			expect(errorMessage).toBe('Font does not contain letter 2.');
 		});
 	});
 });
