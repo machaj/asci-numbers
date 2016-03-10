@@ -2,7 +2,7 @@ import expect from 'expect';
 
 import defaultFont from '../fonts/ANSI_Shadow';
 import simpleFont from '../fonts/simple';
-import ASCIINumbers from '../lib/asciiNumbers';
+import ASCIINumbers from '../src/asciiNumbers';
 
 describe('Default ASCI Numbers', () => {
 	describe('Basic getNumber with simple font', () => {
@@ -41,4 +41,51 @@ describe('Default ASCI Numbers', () => {
 			expect(numbers.getNumber(123)).toBe(expectedResult);
 		});
 	});
+
+	describe('Passing invalid argument to getNumber', () => {
+		const numbers = new ASCIINumbers(simpleFont);
+		let errorMessage;
+
+		try {
+			numbers.getNumber('2');
+		} catch (exception) {
+			errorMessage = exception.message;
+		}
+
+		it('should throw error', () => {
+			expect(errorMessage).toBe('Passed argument is not a number');
+		});
+	});
+
+	describe('Passing too long number as argument to getNumber', () => {
+		const numbers = new ASCIINumbers(defaultFont);
+		let errorMessage;
+
+		try {
+			numbers.getNumber(1234567890);
+		} catch (exception) {
+			errorMessage = exception.message;
+		}
+
+		it('should throw error', () => {
+			expect(errorMessage).toBe('Number has more digits than is' +
+				' able to fit to the command line length');
+		});
+	});
+
+	describe('Configured space between digits', () => {
+		const numbers = new ASCIINumbers(defaultFont, { space: '***' });
+		const expectedResult = '' +
+			'     ██╗ *** ██████╗ *** ██████╗ \n' +
+			'    ███║ *** ╚════██╗*** ╚════██╗\n' +
+			'    ╚██║ ***  █████╔╝***  █████╔╝\n' +
+			'     ██║ *** ██╔═══╝ ***  ╚═══██╗\n' +
+			'     ██║ *** ███████╗*** ██████╔╝\n' +
+			'     ╚═╝ *** ╚══════╝*** ╚═════╝ ';
+
+		it('should return asci text where digits are separate by ***', () => {
+			expect(numbers.getNumber(123)).toBe(expectedResult);
+		});
+	});
+
 });

@@ -41,7 +41,7 @@ function printNumberLine(font, number) {
 
 class ASCINumbers {
 	constructor(font, userConfig) {
-		const config = Object.assign(defaultConfig, userConfig);
+		const config = Object.assign({}, defaultConfig, userConfig);
 		const fontStatistic = fontAnalyse(font);
 		const maxLettersPerLine = Math.round(
 			config.lineLength / (fontStatistic.width + config.space.length)
