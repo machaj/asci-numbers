@@ -1,7 +1,7 @@
 import expect from 'expect';
 import defaultFont from '../fonts/ANSI_Shadow';
 import simpleFont from '../fonts/simple';
-import fontAnalyse from '../src/asciiNumbersFontUtils';
+import fontAnalyse from '../lib/asciiNumbersFontUtils';
 
 
 describe('ASCINumbersFontUtils', () => {
