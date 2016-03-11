@@ -7,7 +7,7 @@
     "compile": "babel -d lib/ src/",
     "compile:watch": "babel -w -d lib/ src/",
     "coverage": "nyc npm test",
-    "coverage:lcov": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "coverage:lcov": "nyc npm test && nyc report --reporter=text-lcov > lcov.txt && cat lcov.txt | coveralls",
     "lint": "eslint . --ext js",
     "prepublish": "npm run compile",
     "test": "_mocha --compilers js:babel-core/register",
