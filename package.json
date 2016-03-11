@@ -1,5 +1,5 @@
 {
-  "name": "asci-numbers",
+  "name": "ascii-numbers",
   "version": "1.0.0",
   "description": "Convert numbers to ASCI art text.",
   "main": "lib/asciNumbers.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/machaj/asci-numbers.git"
+    "url": "git+https://github.com/machaj/ascii-numbers.git"
   },
   "keywords": [
     "ASCII art"
@@ -23,9 +23,9 @@
   "author": "jan.machy@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/machaj/asci-numbers/issues"
+    "url": "https://github.com/machaj/ascii-numbers/issues"
   },
-  "homepage": "https://github.com/machaj/asci-numbers#readme",
+  "homepage": "https://github.com/machaj/ascii-numbers#readme",
   "devDependencies": {
     "babel-cli": "^6.5.1",
     "babel-core": "^6.7.0",
