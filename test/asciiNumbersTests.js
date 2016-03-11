@@ -87,5 +87,4 @@ describe('Default ASCI Numbers', () => {
 			expect(numbers.getNumber(123)).toBe(expectedResult);
 		});
 	});
-
 });

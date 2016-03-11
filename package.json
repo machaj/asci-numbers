@@ -8,9 +8,9 @@
     "compile:watch": "babel -w -d lib/ src/",
     "coverage": "nyc npm test",
     "coverage:lcov": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
-    "lint": "eslint . --ext js || true",
+    "lint": "eslint . --ext js",
     "prepublish": "npm run compile",
-    "test": "mocha --compilers js:babel-core/register",
+    "test": "_mocha --compilers js:babel-core/register",
     "release:patch": "npm test && npm run lint && npm run compile && npm version patch && git push && npm publish"
   },
   "repository": {

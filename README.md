@@ -24,7 +24,6 @@ console.log(asciiNumbersWithFont.getNumber(123))
 */
 ```
 
-
 ## Options
 You can pass second parameter with options to ASCIINumbers constructor.
 
@@ -77,7 +76,6 @@ console.log(asciiNumbersWithFont.getNumber(123))
      ╚═╝ *** ╚══════╝*** ╚═════╝
 */
 ```
-
 
 ## Fonts
 
