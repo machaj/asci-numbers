@@ -1,9 +1,8 @@
 *~
 *.iml
+.coveralls.yml
 .idea
 .nyc_output
-coverage
 node_modules
 npm-debug.log
 lib
-lcov.txt

@@ -7,11 +7,11 @@
     "compile": "babel -d lib/ src/",
     "compile:watch": "babel -w -d lib/ src/",
     "coverage": "nyc npm test",
-    "coverage:lcov": "nyc --reporter=lcov --reporter=text-lcov npm test && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
+    "coverage:lcov": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint . --ext js",
     "prepublish": "npm run compile",
-    "test": "_mocha --compilers js:babel-core/register",
-    "release:patch": "npm test && npm run lint && npm run compile && npm version patch && git push && npm publish"
+    "test": "mocha --compilers js:babel-core/register",
+    "release:patch": "npm test && npm run lint && npm run compile && npm run coverage:lcov && npm version patch && npm publish"
   },
   "repository": {
     "type": "git",
