@@ -1,6 +1,6 @@
 {
   "name": "ascii-numbers",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Convert numbers to ASCI art text.",
   "main": "lib/asciiNumbers.js",
   "scripts": {
