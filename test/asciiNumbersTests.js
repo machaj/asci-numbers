@@ -57,6 +57,20 @@ describe('Default ASCI Numbers', () => {
 		});
 	});
 
+	describe('Passing negative argument to getNumber', () => {
+		const numbers = new ASCIINumbers(defaultFont);
+		const expectedResult = '' +
+			'              ██╗  ██████╗  ██████╗ \n' +
+			'             ███║  ╚════██╗ ╚════██╗\n' +
+			'  █████╗     ╚██║   █████╔╝  █████╔╝\n' +
+			'  ╚════╝      ██║  ██╔═══╝   ╚═══██╗\n' +
+			'              ██║  ███████╗ ██████╔╝\n' +
+			'              ╚═╝  ╚══════╝ ╚═════╝ ';
+		it('should print negative number', () => {
+			expect(numbers.getNumber(-123)).toBe(expectedResult);
+		});
+	});
+
 	describe('Passing too long number as argument to getNumber', () => {
 		const numbers = new ASCIINumbers(defaultFont);
 		let errorMessage;
