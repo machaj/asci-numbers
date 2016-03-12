@@ -59,6 +59,10 @@ class ASCINumbers {
 	getNumber(number) {
 		return printNumberLine(this.font, number).join('\n');
 	}
+
+	getFontStatistic() {
+		return this.font.statistic;
+	}
 }
 
 export default ASCINumbers;

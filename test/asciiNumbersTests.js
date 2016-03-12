@@ -101,4 +101,16 @@ describe('Default ASCI Numbers', () => {
 			expect(numbers.getNumber(123)).toBe(expectedResult);
 		});
 	});
+
+	describe('Get font statistic', () => {
+		const numbers = new ASCIINumbers(defaultFont);
+
+		it('should return 6 for default font height', () => {
+			expect(numbers.getFontStatistic().height).toBe(6);
+		});
+
+		it('should return 9 for default font width', () => {
+			expect(numbers.getFontStatistic().width).toBe(9);
+		});
+	});
 });
