@@ -1,4 +1,6 @@
 # ascii-numbers
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/machaj/ascii-numbers.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/machaj/ascii-numbers.svg?branch=master)](https://travis-ci.org/machaj/ascii-numbers)
 [![Coverage Status](https://coveralls.io/repos/github/machaj/ascii-numbers/badge.svg?branch=master)](https://coveralls.io/github/machaj/ascii-numbers?branch=master)
 
