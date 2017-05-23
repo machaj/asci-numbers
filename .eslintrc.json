@@ -18,6 +18,7 @@
         "comma-dangle": [
             "error",
             "never"
-        ]
+        ],
+        "no-tabs": 0
     }
 }

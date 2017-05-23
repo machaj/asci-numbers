@@ -9,9 +9,9 @@ const defaultConfig = {
 function printNumber(font, numberAsString, numberOfDigits) {
 	const asciiNumber = [];
 
-	for (let letterRow = 0; letterRow < font.statistic.height; letterRow++) {
+	for (let letterRow = 0; letterRow < font.statistic.height; letterRow += 1) {
 		const asciiTextRow = [];
-		for (let digit = 0; digit < numberOfDigits; digit++) {
+		for (let digit = 0; digit < numberOfDigits; digit += 1) {
 			asciiTextRow.push(font.letters[numberAsString[digit]][letterRow]);
 		}
 		asciiNumber.push(asciiTextRow.join(font.space));

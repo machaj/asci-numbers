@@ -25,13 +25,13 @@ function fontAnalyse(font) {
 	while (i < requiredLettersCount) {
 		const letter = requiredLetters[i];
 
-		if (font.hasOwnProperty(letter)) {
+		if (Object.prototype.hasOwnProperty.call(font, letter)) {
 			fontStatistic.height = checkFontHeight(font[letter], fontStatistic.height);
 			fontStatistic.width = checkFontWidth(font[letter], fontStatistic.width);
 		} else {
 			throw new Error(`Font does not contain letter ${letter}.`);
 		}
-		i++;
+		i += 1;
 	}
 
 	return fontStatistic;
