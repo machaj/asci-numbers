@@ -9,8 +9,8 @@ a simple lib for converting numbers to ASCII art text.
 ## Usage
 
 ```javascript
-import font from 'asci-numbers/fonts/ANSI_Shadow';
-import ASCIINumbers from 'asci-numbers';
+import font from 'ascii-numbers/fonts/ANSI_Shadow';
+import ASCIINumbers from 'ascii-numbers';
 
 const asciiNumbersWithFont = new ASCIINumbers(font);
 
